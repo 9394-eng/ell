@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Update Profile</h2>
+  <form method="POST">
+    Name:  <input type="text" name="name"  value="{{ user.name }}"><br>
+    Email: <input type="email" name="email" value="{{ user.email }}"><br>
+    <button type="submit">Update</button>
+  </form>
+  <p><a href="{{ url_for('profile', user_id=user.id) }}">Back to Profile</a> | <a href="{{ url_for('logout') }}">Logout</a></p>
+{% endblock %}

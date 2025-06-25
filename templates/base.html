@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flask Profile App</title>
+  <style>
+    body { font-family: sans-serif; margin: 1em; }
+    .success { color: green; } .danger { color: red; } .warning { color: orange; } .info { color: blue; }
+  </style>
+</head>
+<body>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, msg in messages %}
+      <p class="{{ category }}">{{ msg }}</p>
+    {% endfor %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</body>
+</html>
