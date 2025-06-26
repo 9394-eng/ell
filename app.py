@@ -60,6 +60,12 @@ def register():
 
     return render_template('register.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        # TODO: Add login logic here (check email and password, set session, etc.)
+        pass
+    return render_template('login.html')
 
 @app.route('/profile/<user_id>')
 def profile(user_id):
